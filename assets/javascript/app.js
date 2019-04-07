@@ -1,6 +1,6 @@
 /*Problems:
-Only taking "c" as correct answer
-Not updating counter on page, is updating via console.log
+Only taking "c" as correct answer if do .append. Takes correct answer but only shows one Q with .html
+
 
 */
 
@@ -40,7 +40,7 @@ var questions = [question1, question2, question3]
 
 
 for (var i = 0;  i < questions.length; i++) {
-    
+    //this commented out part has only the "a" as a button and not the whole answer
     // $("#question-display").append("Q: " + questions[i].question + "<br> <button value='a'> a. </button>" + questions[i].optionA + "<br> <button value='b'> b. </button>" + questions[i].optionB + "<br> <button value='c'> c. </button>" + questions[i].optionC + "<br>");
     // rightAnswer = questions[i].correctAnswer;  
     // console.log("Q: " + questions[i].question + "<br> <button value='a'> a. </button>" + questions[i].optionA + "<br> <button value='b'> b. </button>" + questions[i].optionB + "<br> <button value='c'> c. </button>" + questions[i].optionC + "<br>")   
@@ -48,7 +48,7 @@ for (var i = 0;  i < questions.length; i++) {
     // console.log("for loop question[i]: " + questions[i].correctAnswer);
 
 
-    $("#question-display").append("Q: " + questions[i].question + "<br> <button value='a'> a." + questions[i].optionA + "</button>"  + "<br> <button value='b'> b." + questions[i].optionB + "</button>" + "<br> <button value='c'> c." + questions[i].optionC + "</button><br>");
+    $("#question-display").html("Q: " + questions[i].question + "<br> <button value='a'> a." + questions[i].optionA + "</button>"  + "<br> <button value='b'> b." + questions[i].optionB + "</button>" + "<br> <button value='c'> c." + questions[i].optionC + "</button><br>");
     rightAnswer = questions[i].correctAnswer;  
     console.log("Q: " + questions[i].question + "<br> <button value='a'> a." + questions[i].optionA + "</button>"  + "<br> <button value='b'> b." + questions[i].optionB + "</button>" + "<br> <button value='c'> c." + questions[i].optionC + "</button><br>")
     console.log("for loop rightAnswer: " + rightAnswer);
@@ -67,6 +67,7 @@ $("button").on("click", function() {
     // console.log("this button " + buttonPressed);
     if (rightAnswer === buttonPressed) {
         correct++;
+        $("#correct").text(correct);
         console.log("if correct: " + correct);
         console.log("if rightAnswer: " + rightAnswer);
         //add timing things to move on to the next page after however many seconds
@@ -74,6 +75,7 @@ $("button").on("click", function() {
     else if (rightAnswer !== buttonPressed) {
         incorrect++;
         console.log("incorrect: " + incorrect);
+        $("#incorrect").text(incorrect);
         console.log("The right answer was: " + rightAnswer);
         
         
@@ -82,6 +84,7 @@ $("button").on("click", function() {
     else {
         noAnswer++;
         console.log("No answer");
+        $("#unanswered").text(noAnswer);
     }
 
 });
@@ -89,11 +92,14 @@ $("button").on("click", function() {
 
 
 
-$("#correct").text(correct);
-$("#incorrect").text(incorrect);
-$("#unanswered").text(noAnswer);
-
-
 //Game ends when timer runs out
 
 //At the end of the game, will display number of questions answered correctly and incorrectly
+
+
+
+//These will not update if not placed within the onclick/if else code blocks???
+// $("#correct").text(correct);
+// $("#incorrect").text(incorrect);
+// $("#unanswered").text(noAnswer);
+
