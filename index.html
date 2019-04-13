@@ -6,22 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Totally Trivial Trivia!</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="assets/css/reset.css"> -->
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Mali" rel="stylesheet">
 
 </head>
 <body>
+
+    <div class="container">
     <h1>Totally Trivial Trivia!</h1>
-    
-    <h3>Time Remaining: <span id="time-remaining"></span> seconds</h3>
-    
-    <div id="question-display"></div>
 
 
-    correct: <div id="correct"></div>
-    incorrect: <div id="incorrect"></div>
-    unanswered: <div id="unanswered"></div>
+    <div id="buttons">
+        <button id="start"><h2>Start</h2></button>
+    </div>
+    
+    
+    <h2><div id="question-display">You will have one minute to answer 10 questions.<p>Press Start when you're ready!</p></div></h2>
+
+    <div id="time-remaining"><h2></h2></div>
+
+    <div id="correct"></div>
+    <div id="incorrect"></div>
+    
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="assets/javascript/app.js"></script>
+
+    </div>
+
 </body>
 </html>
